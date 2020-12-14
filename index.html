@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 25px;
+            font-family: sans-serif;
+        }
+
+        .raiting {
+            margin: 0 0 1em 0;
+            padding: 0;
+            border: none;
+        }
+
+        .raiting__caption {
+            margin-bottom: 0.5em;
+            padding: 0;
+        }
+
+        .raiting__star {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2em;
+            height: 2em;
+            font-size: inherit;
+            margin: 0;
+            background-size: 2em 1.9em;
+            background-repeat: repeat-x;
+        }
+
+        .raiting__star:focus {
+            outline: none;
+        }
+
+        .raiting__input:checked+.raiting__star,
+        .raiting__star:hover {
+            background-image: url(images/on.svg);
+        }
+
+        .raiting__star:hover~.raiting__star {
+            background-image: url(images/off.svg);
+        }
+
+        .raiting__group {
+            position: relative;
+            width: 10em;
+            height: 2em;
+            background-image: url(images/off.svg);
+            background-size: 2em 1.9em;
+            background-repeat: repeat-x;
+        }
+
+        .raiting__star:nth-of-type(1) {
+            width: 2em;
+            z-index: 5;
+        }
+
+        .raiting__star:nth-of-type(2) {
+            width: 4em;
+            z-index: 4;
+        }
+
+        .raiting__star:nth-of-type(3) {
+            width: 6em;
+            z-index: 3;
+        }
+
+        .raiting__star:nth-of-type(4) {
+            width: 8em;
+            z-index: 2;
+        }
+
+        .raiting__star:nth-of-type(5) {
+            z-index: 1;
+            width: 10em;
+        }
+
+        .raiting__input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+        }
+
+        .raiting__input:focus ~ .raiting__focus {
+            position: absolute;
+            top: -0.2em;
+            right: -0.2em;
+            bottom: -0.2em;
+            left: -0.2em;
+            z-index: -1;
+            outline: solid 0.2em red;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset class="raiting">
+        <legend class="raiting__caption">Well-being</legend>
+        <div class="raiting__group">
+            <input class='raiting__input' type="radio" name='Well-being' id="Well-being-1" value="1" checked>
+            <label class='raiting__star' for='Well-being-1' aria-label="one"></label>
+
+            <input class='raiting__input' type="radio" name='Well-being' id="Well-being-2" value="2">
+            <label class='raiting__star' for='Well-being-2' aria-label="two"></label>
+
+            <input class='raiting__input' type="radio" name='Well-being' id="Well-being-3" value="3">
+            <label class='raiting__star' for='Well-being-3' aria-label="three"></label>
+
+            <input class='raiting__input' type="radio" name='Well-being' id="Well-being-4" value="4">
+            <label class='raiting__star' for='Well-being-4' aria-label="four"></label>
+
+            <input class='raiting__input' type="radio" name='Well-being' id="Well-being-5" value="5">
+            <label class='raiting__star' for='Well-being-5' aria-label="five"></label>
+            <div class="raiting__focus"></div>
+        </div>
+    </fieldset>
+    <fieldset class="raiting">
+        <legend class="raiting__caption">Mood</legend>
+        <div class="raiting__group">
+            <input class='raiting__input' type="radio" id="Mood-1" name='Mood' value="1" checked>
+            <label for="Mood-1" class="raiting__star" aria-label="one"></label>
+
+            <input class='raiting__input' type="radio" id="Mood-2" name='Mood' value="2">
+            <label for="Mood-2" class="raiting__star" aria-label="two"></label>
+
+            <input class='raiting__input' type="radio" id="Mood-3" name='Mood' value="3">
+            <label for="Mood-3" class="raiting__star" aria-label="three"></label>
+
+            <input class='raiting__input' type="radio" id="Mood-4" name='Mood' value="4">
+            <label for="Mood-4" class="raiting__star" aria-label="four"></label>
+
+            <input class='raiting__input' type="radio" id="Mood-5" name='Mood' value="5">
+            <label for="Mood-5" class="raiting__star" aria-label="five"></label>
+            <div class="raiting__focus"></div>
+        </div>
+    </fieldset>
+    <fieldset class="raiting">
+        <legend class="raiting__caption">Something</legend>
+        <div class="raiting__group">
+            <input class='raiting__input' type="radio" name='Something' id="Something-1" value="1">
+            <label for="Something-1" class="raiting__star" aria-label="one"></label>
+
+            <input class='raiting__input' type="radio" name='Something' id="Something-2" value="2" checked>
+            <label for="Something-2" class="raiting__star" aria-label="two"></label>
+
+            <input class='raiting__input' type="radio" name='Something' id="Something-3" value="3">
+            <label for="Something-3" class="raiting__star" aria-label="three"></label>
+
+            <input class='raiting__input' type="radio" name='Something' id="Something-4" value="4">
+            <label for="Something-4" class="raiting__star" aria-label="four"></label>
+
+            <input class='raiting__input' type="radio" name='Something' id="Something-5" value="5">
+            <label for="Something-5" class="raiting__star" aria-label="five"></label>
+
+            <div class="raiting__focus"></div>
+        </div>
+    </fieldset>
+</body>
+
+</html>
